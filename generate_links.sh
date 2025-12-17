@@ -70,12 +70,8 @@ generate_menu() {
         if [[ "${basename,,}" == "readme.md" ]] || \
            [[ "$basename" == ".git" ]] || \
            [[ "$basename" == ".gitignore" ]] || \
+           [[ "$basename" == ".github" ]] || \
            [[ "$basename" == "generate_links.sh" ]]; then
-            return 0
-        fi
-        
-        # Skip files matched by .gitignore (if git is available)
-        if command -v git &> /dev/null && git -C "$SCRIPT_DIR" check-ignore -q "$item" 2>/dev/null; then
             return 0
         fi
         
