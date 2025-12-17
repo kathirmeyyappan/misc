@@ -83,35 +83,10 @@ generate_menu() {
         menu+="_No files in this directory._\n"
     fi
     
-    # Read existing README content
-    local existing_content=$(cat "$readme_file")
+    # Overwrite the README with the new menu
+    echo -e "$menu" > "$readme_file"
     
-    # Check if there's already a Contents section
-    if echo "$existing_content" | grep -q "^# Contents"; then
-        # Replace existing Contents section (everything from ## Contents to next ## or end)
-        # Using awk for multi-line replacement
-        local new_content=$(echo "$existing_content" | awk -v menu="$menu" '
-            BEGIN { in_contents = 0; printed_menu = 0 }
-            /^# Contents/ { 
-                in_contents = 1
-                printf "%s", menu
-                printed_menu = 1
-                next
-            }
-            /^#/ && in_contents { 
-                in_contents = 0
-                print
-                next
-            }
-            !in_contents { print }
-        ')
-        echo -e "$new_content" > "$readme_file"
-    else
-        # Append Contents section to the end
-        echo -e "\n$menu" >> "$readme_file"
-    fi
-    
-    echo "  ✓ Updated menu in $readme_file"
+    echo "  ✓ Wrote menu to $readme_file"
 }
 
 # Recursively process directories
