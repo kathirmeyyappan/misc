@@ -1,0 +1,65 @@
+name: Verify and Deploy
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+# Sets permissions for GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run generate_links.sh
+        run: bash generate_links.sh
+
+      - name: Check for changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "❌ README files are out of date!"
+            echo ""
+            echo "The following files have changed:"
+            git status --porcelain
+            echo ""
+            echo "Please run 'bash generate_links.sh' locally and commit the changes."
+            exit 1
+          else
+            echo "✅ All README files are up to date!"
+          fi
+
+  deploy:
+    needs: verify  # Only deploy if verify passes
+    if: github.event_name == 'push'  # Only deploy on push, not PRs
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
