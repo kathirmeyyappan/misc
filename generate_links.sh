@@ -72,10 +72,10 @@ generate_menu() {
         
         if [[ -d "$item" ]]; then
             # It's a directory - link to it with a folder indicator
-            menu+="## 📁 [$basename]($BASE_URL/$encoded_path/)\n\n"
+            menu+="### 📁 [$basename]($BASE_URL/$encoded_path/)\n\n"
         else
             # It's a file
-            menu+="## [$basename]($BASE_URL/$encoded_path)\n\n"
+            menu+="### [$basename]($BASE_URL/$encoded_path)\n\n"
         fi
     done < <(find "$dir" -maxdepth 1 -mindepth 1 -print0 | sort -z)
     
