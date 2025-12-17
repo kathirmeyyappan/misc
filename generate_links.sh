@@ -48,6 +48,22 @@ generate_menu() {
     
     # Build the menu
     local menu="# Contents\n\n"
+    
+    # Add parent directory link
+    if [[ -z "$rel_path" ]]; then
+        # Top level - link to main site
+        menu+="### [..](https://kathirm.com)\n\n"
+    else
+        # Nested directory - link to parent
+        local parent_path=$(dirname "$rel_path")
+        if [[ "$parent_path" == "." ]]; then
+            menu+="### [..]($BASE_URL/)\n\n"
+        else
+            local encoded_parent=$(percent_encode "$parent_path")
+            menu+="### [..]($BASE_URL/$encoded_parent/)\n\n"
+        fi
+    fi
+    
     local has_items=false
     
     # List all files and directories, excluding README and gitignored files
