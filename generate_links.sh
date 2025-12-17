@@ -54,8 +54,11 @@ generate_menu() {
     while IFS= read -r -d '' item; do
         local basename=$(basename "$item")
         
-        # Skip README files
-        if [[ "${basename,,}" == "readme.md" ]]; then
+        # Skip README files, .git, .gitignore, and the script itself
+        if [[ "${basename,,}" == "readme.md" ]] || \
+           [[ "$basename" == ".git" ]] || \
+           [[ "$basename" == ".gitignore" ]] || \
+           [[ "$basename" == "generate_links.sh" ]]; then
             continue
         fi
         
