@@ -66,8 +66,9 @@ generate_menu() {
     
     local has_items=false
     
-    # List all files and directories, excluding README and gitignored files
-    while IFS= read -r -d '' item; do
+    # Helper function to check if item should be skipped
+    should_skip() {
+        local item="$1"
         local basename=$(basename "$item")
         
         # Skip README files, .git, .gitignore, and the script itself
@@ -75,25 +76,37 @@ generate_menu() {
            [[ "$basename" == ".git" ]] || \
            [[ "$basename" == ".gitignore" ]] || \
            [[ "$basename" == "generate_links.sh" ]]; then
-            continue
+            return 0
         fi
         
         # Skip files matched by .gitignore (if git is available)
         if command -v git &> /dev/null && git -C "$SCRIPT_DIR" check-ignore -q "$item" 2>/dev/null; then
-            continue
+            return 0
         fi
         
-        has_items=true
-        
-        # Build the full path for the URL (percent-encoded for GitHub Pages)
-        local item_rel_path="${item#$SCRIPT_DIR/}"
-        local encoded_path=$(percent_encode "$item_rel_path")
-        
+        return 1
+    }
+    
+    # First pass: directories
+    while IFS= read -r -d '' item; do
+        if should_skip "$item"; then continue; fi
         if [[ -d "$item" ]]; then
-            # It's a directory - link to it with a folder indicator
+            has_items=true
+            local basename=$(basename "$item")
+            local item_rel_path="${item#$SCRIPT_DIR/}"
+            local encoded_path=$(percent_encode "$item_rel_path")
             menu+="### 📁 [$basename]($BASE_URL/$encoded_path/)\n\n"
-        else
-            # It's a file
+        fi
+    done < <(find "$dir" -maxdepth 1 -mindepth 1 -print0 | sort -z)
+    
+    # Second pass: files
+    while IFS= read -r -d '' item; do
+        if should_skip "$item"; then continue; fi
+        if [[ -f "$item" ]]; then
+            has_items=true
+            local basename=$(basename "$item")
+            local item_rel_path="${item#$SCRIPT_DIR/}"
+            local encoded_path=$(percent_encode "$item_rel_path")
             menu+="### [$basename]($BASE_URL/$encoded_path)\n\n"
         fi
     done < <(find "$dir" -maxdepth 1 -mindepth 1 -print0 | sort -z)
