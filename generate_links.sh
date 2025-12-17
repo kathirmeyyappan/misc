@@ -47,15 +47,20 @@ generate_menu() {
     rel_path="${rel_path#/}"  # Remove leading slash if present
     
     # Build the menu
-    local menu="## Contents\n\n"
+    local menu="# Contents\n\n"
     local has_items=false
     
-    # List all files and directories, excluding README and this script
+    # List all files and directories, excluding README and gitignored files
     while IFS= read -r -d '' item; do
         local basename=$(basename "$item")
         
-        # Skip README files and this script
-        if [[ "${basename,,}" == "readme.md" ]] || [[ "$basename" == "generate_links.sh" ]]; then
+        # Skip README files
+        if [[ "${basename,,}" == "readme.md" ]]; then
+            continue
+        fi
+        
+        # Skip files matched by .gitignore (if git is available)
+        if command -v git &> /dev/null && git -C "$SCRIPT_DIR" check-ignore -q "$item" 2>/dev/null; then
             continue
         fi
         
@@ -67,10 +72,10 @@ generate_menu() {
         
         if [[ -d "$item" ]]; then
             # It's a directory - link to it with a folder indicator
-            menu+="- 📁 [$basename]($BASE_URL/$encoded_path/)\n"
+            menu+="## 📁 [$basename]($BASE_URL/$encoded_path/)\n\n"
         else
             # It's a file
-            menu+="- [$basename]($BASE_URL/$encoded_path)\n"
+            menu+="## [$basename]($BASE_URL/$encoded_path)\n\n"
         fi
     done < <(find "$dir" -maxdepth 1 -mindepth 1 -print0 | sort -z)
     
@@ -82,18 +87,18 @@ generate_menu() {
     local existing_content=$(cat "$readme_file")
     
     # Check if there's already a Contents section
-    if echo "$existing_content" | grep -q "^## Contents"; then
+    if echo "$existing_content" | grep -q "^# Contents"; then
         # Replace existing Contents section (everything from ## Contents to next ## or end)
         # Using awk for multi-line replacement
         local new_content=$(echo "$existing_content" | awk -v menu="$menu" '
             BEGIN { in_contents = 0; printed_menu = 0 }
-            /^## Contents/ { 
+            /^# Contents/ { 
                 in_contents = 1
                 printf "%s", menu
                 printed_menu = 1
                 next
             }
-            /^## / && in_contents { 
+            /^#/ && in_contents { 
                 in_contents = 0
                 print
                 next
