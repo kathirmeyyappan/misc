@@ -25,20 +25,15 @@ percent_encode() {
 # Generate menu for a directory
 generate_menu() {
     local dir="$1"
-    local readme_file=""
+    local readme_file="$dir/README.md"
     
-    # Find README.md (case insensitive)
-    for f in "$dir"/README.md "$dir"/README.MD "$dir"/readme.md; do
-        if [[ -f "$f" ]]; then
-            readme_file="$f"
-            break
+    # Remove any case variants (GitHub Pages needs lowercase .md)
+    for f in "$dir"/README.MD "$dir"/readme.MD "$dir"/Readme.md; do
+        if [[ -f "$f" ]] && [[ "$f" != "$readme_file" ]]; then
+            rm "$f"
+            echo "  Removed $f (using lowercase README.md)"
         fi
     done
-    
-    if [[ -z "$readme_file" ]]; then
-        echo "No README.md found in $dir, skipping..."
-        return
-    fi
     
     echo "Processing: $readme_file"
     
