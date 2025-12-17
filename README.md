@@ -2,7 +2,7 @@
 
 ### [..](https://kathirm.com)
 
-### 📁 [test_nested_path](https://kathirm.com/misc/test_nested_path/)
+### 📁 [memes](https://kathirm.com/misc/memes/)
 
 ### [korok.mp4](https://kathirm.com/misc/korok.mp4)
 
