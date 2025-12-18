@@ -2,7 +2,7 @@
 
 ### [..](https://kathirm.com)
 
-### 📁 [dark_history](https://kathirm.com/misc/dark_history/)
+### 📁 [dark-history](https://kathirm.com/misc/dark-history/)
 
 ### 📁 [memes](https://kathirm.com/misc/memes/)
 
