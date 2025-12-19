@@ -41,8 +41,14 @@ generate_menu() {
     local rel_path="${dir#$SCRIPT_DIR}"
     rel_path="${rel_path#/}"  # Remove leading slash if present
     
-    # Build the menu
-    local menu="# Contents\n\n"
+    # Build the menu with breadcrumb title
+    local breadcrumb
+    if [[ -z "$rel_path" ]]; then
+        breadcrumb="misc"
+    else
+        breadcrumb="misc/$rel_path"
+    fi
+    local menu="# \`$breadcrumb\` contents\n\n"
     
     # Add parent directory link
     if [[ -z "$rel_path" ]]; then

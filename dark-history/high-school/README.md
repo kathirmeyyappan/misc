@@ -1,4 +1,4 @@
-# Contents
+# `misc/dark-history/high-school` contents
 
 ### [..](https://kathirm.com/misc/dark-history/)
 
