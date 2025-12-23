@@ -12,6 +12,7 @@ SKIP_PATTERNS=(
     ".git"
     ".gitignore"
     ".github"
+    "_config.yml"
     "generate_misc.sh"
     "lib"
 )
