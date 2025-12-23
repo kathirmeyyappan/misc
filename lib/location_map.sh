@@ -35,7 +35,7 @@ generate_location_map() {
     tree_lines+=("misc${root_marker}")
     build_tree "$SCRIPT_DIR" ""
     
-    local out="## Map\n\n\`\`\`\n"
+    local out="## Map:\n\n\`\`\`\n"
     for line in "${tree_lines[@]}"; do
         out+="${line}\n"
     done

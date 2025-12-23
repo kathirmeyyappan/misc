@@ -1,6 +1,6 @@
 # `misc`
 
-## Contents
+## Contents:
 
 ### [..](https://kathirm.com)
 
@@ -14,7 +14,7 @@
 
 ### [speech_tech_paper.pdf](https://kathirm.com/misc/speech_tech_paper.pdf)
 
-## Map
+## Map:
 
 ```
 misc  📍 YOU ARE HERE

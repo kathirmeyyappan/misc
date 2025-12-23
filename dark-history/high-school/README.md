@@ -1,12 +1,12 @@
 # `misc/dark-history/high-school`
 
-## Contents
+## Contents:
 
 ### [..](https://kathirm.com/misc/dark-history/)
 
 ### [uchicago_admission_essay.pdf](https://kathirm.com/misc/dark-history/high-school/uchicago_admission_essay.pdf)
 
-## Map
+## Map:
 
 ```
 misc

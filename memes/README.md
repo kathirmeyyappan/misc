@@ -1,6 +1,6 @@
 # `misc/memes`
 
-## Contents
+## Contents:
 
 ### [..](https://kathirm.com/misc/)
 
@@ -10,7 +10,7 @@
 
 ### [uno_reverse.gif](https://kathirm.com/misc/memes/uno_reverse.gif)
 
-## Map
+## Map:
 
 ```
 misc

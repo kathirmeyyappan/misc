@@ -6,7 +6,7 @@ generate_directory_listing() {
     local breadcrumb="misc"
     [[ -n "$rel_path" ]] && breadcrumb="misc/$rel_path"
     output+="# \`$breadcrumb\`\n\n"
-    output+="## Contents\n\n"
+    output+="## Contents:\n\n"
     
     if [[ -z "$rel_path" ]]; then
         output+="### [..](https://kathirm.com)\n\n"

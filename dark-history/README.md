@@ -1,6 +1,6 @@
 # `misc/dark-history`
 
-## Contents
+## Contents:
 
 ### [..](https://kathirm.com/misc/)
 
@@ -8,7 +8,7 @@
 
 ### 📁 [high-school](https://kathirm.com/misc/dark-history/high-school/)
 
-## Map
+## Map:
 
 ```
 misc
