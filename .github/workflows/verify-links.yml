@@ -13,8 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run generate_links.sh
-        run: bash generate_links.sh
+      - name: Run generate_misc.sh
+        run: bash generate_misc.sh
 
       - name: Check for changes
         run: |
@@ -24,7 +24,7 @@ jobs:
             echo "The following files have changed:"
             git status --porcelain
             echo ""
-            echo "Please run 'bash generate_links.sh' locally and commit the changes."
+            echo "Please run 'bash generate_misc.sh' locally and commit the changes."
             exit 1
           else
             echo "✅ All README files are up to date!"
