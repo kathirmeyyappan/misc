@@ -10,6 +10,8 @@
 
 ### 📁 [memes](https://kathirm.com/misc/memes/)
 
+### 📁 [random](https://kathirm.com/misc/random/)
+
 ### [korok.mp4](https://kathirm.com/misc/korok.mp4)
 
 ## Map:
@@ -31,6 +33,8 @@
 │   ├── default_dance.gif
 │   ├── m&m.jpeg
 │   └── uno_reverse.gif
+├── 📁 random
+│   └── elizabeth.ico
 └── korok.mp4
 ```
 

@@ -25,6 +25,8 @@
 │   ├── default_dance.gif
 │   ├── m&m.jpeg
 │   └── uno_reverse.gif
+├── 📁 random
+│   └── elizabeth.ico
 └── korok.mp4
 ```
 

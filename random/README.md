@@ -1,14 +1,10 @@
-# `misc/memes`
+# `misc/random`
 
 ## Contents:
 
 ### [..](https://kathirm.com/misc/)
 
-### [default_dance.gif](https://kathirm.com/misc/memes/default_dance.gif)
-
-### [m&m.jpeg](https://kathirm.com/misc/memes/m%26m.jpeg)
-
-### [uno_reverse.gif](https://kathirm.com/misc/memes/uno_reverse.gif)
+### [elizabeth.ico](https://kathirm.com/misc/random/elizabeth.ico)
 
 ## Map:
 
@@ -25,11 +21,11 @@
 │   │   └── food_fight.pdf
 │   └── 📁 high-school
 │       └── a_bald_leap_of_faith.pdf
-├── 📁 memes  📍 YOU ARE HERE
+├── 📁 memes
 │   ├── default_dance.gif
 │   ├── m&m.jpeg
 │   └── uno_reverse.gif
-├── 📁 random
+├── 📁 random  📍 YOU ARE HERE
 │   └── elizabeth.ico
 └── korok.mp4
 ```
