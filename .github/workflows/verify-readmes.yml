@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run generate_misc.sh
-        run: bash generate_misc.sh
+        run: bash .github/scripts/generate_misc.sh
 
       - name: Check for changes
         run: |

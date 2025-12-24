@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run generate_misc.sh
-        run: bash generate_misc.sh
+        run: bash .github/scripts/generate_misc.sh
 
       - name: Commit and push if changed
         run: |
