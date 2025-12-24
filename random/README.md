@@ -6,6 +6,8 @@
 
 ### [elizabeth.ico](https://kathirm.com/misc/random/elizabeth.ico)
 
+### [katsura.ico](https://kathirm.com/misc/random/katsura.ico)
+
 ## Map:
 
 ```
@@ -26,7 +28,8 @@
 │   ├── m&m.jpeg
 │   └── uno_reverse.gif
 ├── 📁 random  📍 YOU ARE HERE
-│   └── elizabeth.ico
+│   ├── elizabeth.ico
+│   └── katsura.ico
 └── korok.mp4
 ```
 

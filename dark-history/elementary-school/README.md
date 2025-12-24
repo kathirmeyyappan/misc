@@ -26,7 +26,8 @@
 │   ├── m&m.jpeg
 │   └── uno_reverse.gif
 ├── 📁 random
-│   └── elizabeth.ico
+│   ├── elizabeth.ico
+│   └── katsura.ico
 └── korok.mp4
 ```
 
