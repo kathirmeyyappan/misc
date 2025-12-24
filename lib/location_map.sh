@@ -6,26 +6,29 @@ generate_location_map() {
         local dir="$1"
         local prefix="$2"
         
-        local dirs=()
-        while IFS= read -r -d '' d; do
-            should_skip "$d" && continue
-            dirs+=("$d")
-        done < <(find "$dir" -maxdepth 1 -mindepth 1 -type d -print0 | sort -z)
+        local items=()
+        while IFS= read -r -d '' item; do
+            should_skip "$item" && continue
+            items+=("$item")
+        done < <(find "$dir" -maxdepth 1 -mindepth 1 -printf '%y %p\0' | sort -z | cut -z -d' ' -f2-)
         
-        local count=${#dirs[@]}
+        local count=${#items[@]}
         local i=0
-        for d in "${dirs[@]}"; do
-            local name=$(basename "$d")
-            local d_rel="${d#$SCRIPT_DIR/}"
-            local marker=""
-            [[ "$d_rel" == "$current_rel_path" ]] && marker="  📍 YOU ARE HERE"
-            
+        for item in "${items[@]}"; do
+            local name=$(basename "$item")
             local connector="├──"
             local next_prefix="${prefix}│   "
             ((i == count - 1)) && { connector="└──"; next_prefix="${prefix}    "; }
             
-            tree_lines+=("${prefix}${connector} ${name}${marker}")
-            build_tree "$d" "$next_prefix"
+            if [[ -d "$item" ]]; then
+                local d_rel="${item#$SCRIPT_DIR/}"
+                local marker=" 📁"
+                [[ "$d_rel" == "$current_rel_path" ]] && marker=" 📁 📍 YOU ARE HERE"
+                tree_lines+=("${prefix}${connector} ${name}${marker}")
+                build_tree "$item" "$next_prefix"
+            else
+                tree_lines+=("${prefix}${connector} ${name}")
+            fi
             ((i++))
         done
     }
