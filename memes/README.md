@@ -24,7 +24,7 @@ misc
 │   ├── elementary-school 📁
 │   │   └── food_fight.pdf
 │   └── high-school 📁
-│       └── uchicago_admission_essay.pdf
+│       └── a_bald_leap_of_faith.pdf
 ├── memes 📁 📍 YOU ARE HERE
 │   ├── default_dance.gif
 │   ├── m&m.jpeg

@@ -4,7 +4,7 @@
 
 ### [..](https://kathirm.com/misc/dark-history/)
 
-### [uchicago_admission_essay.pdf](https://kathirm.com/misc/dark-history/high-school/uchicago_admission_essay.pdf)
+### [a_bald_leap_of_faith.pdf](https://kathirm.com/misc/dark-history/high-school/a_bald_leap_of_faith.pdf)
 
 ## Map:
 
@@ -20,7 +20,7 @@ misc
 │   ├── elementary-school 📁
 │   │   └── food_fight.pdf
 │   └── high-school 📁 📍 YOU ARE HERE
-│       └── uchicago_admission_essay.pdf
+│       └── a_bald_leap_of_faith.pdf
 ├── memes 📁
 │   ├── default_dance.gif
 │   ├── m&m.jpeg
