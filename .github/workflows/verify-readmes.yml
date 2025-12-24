@@ -1,9 +1,7 @@
-# Ensures commited README files are reflective of the current repository structure/contents.
-name: README validation
+# Ensures README files are reflective of the current repository structure.
+name: Verify READMEs
 
 on:
-  push:
-    branches: [main, master]
   pull_request:
     branches: [main, master]
 
@@ -30,3 +28,4 @@ jobs:
           else
             echo "✅ All README files are up to date!"
           fi
+
