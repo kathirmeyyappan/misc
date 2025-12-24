@@ -28,7 +28,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "✅ No changes to commit"
           else
-            git commit -m "[GitHub Actions] Auto-generate READMEs with `generate_misc.sh`"
+            git commit -m "[GitHub Actions] Auto-generate READMEs"
             git push
           fi
 
