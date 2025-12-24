@@ -1,4 +1,5 @@
-name: Verify README links
+# Ensures commited README files are reflective of the current repository structure/contents.
+name: README validation
 
 on:
   push:
