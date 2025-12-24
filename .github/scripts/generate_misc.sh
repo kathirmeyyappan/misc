@@ -11,6 +11,7 @@ SKIP_PATTERNS=(
     "readme.md"
     ".git"
     ".gitignore"
+    ".gitattributes"
     ".github"
     "_config.yml"
     "_layouts"
