@@ -9,19 +9,19 @@
 ## Map:
 
 ```
-misc
-├── college 📁
-│   ├── dbms-ta-reviews 📁
+📁 misc
+├── 📁 college
+│   ├── 📁 dbms-ta-reviews
 │   │   ├── 2025_ta_feedback_1.png
 │   │   └── 2025_ta_feedback_2.png
 │   ├── resume.pdf
 │   └── speech_tech_paper.pdf
-├── dark-history 📁
-│   ├── elementary-school 📁 📍 YOU ARE HERE
+├── 📁 dark-history
+│   ├── 📁 elementary-school  📍 YOU ARE HERE
 │   │   └── food_fight.pdf
-│   └── high-school 📁
+│   └── 📁 high-school
 │       └── a_bald_leap_of_faith.pdf
-├── memes 📁
+├── 📁 memes
 │   ├── default_dance.gif
 │   ├── m&m.jpeg
 │   └── uno_reverse.gif

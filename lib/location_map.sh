@@ -22,9 +22,9 @@ generate_location_map() {
             
             if [[ -d "$item" ]]; then
                 local d_rel="${item#$SCRIPT_DIR/}"
-                local marker=" 📁"
-                [[ "$d_rel" == "$current_rel_path" ]] && marker=" 📁 📍 YOU ARE HERE"
-                tree_lines+=("${prefix}${connector} ${name}${marker}")
+                local marker=""
+                [[ "$d_rel" == "$current_rel_path" ]] && marker="  📍 YOU ARE HERE"
+                tree_lines+=("${prefix}${connector} 📁 ${name}${marker}")
                 build_tree "$item" "$next_prefix"
             else
                 tree_lines+=("${prefix}${connector} ${name}")
@@ -35,7 +35,7 @@ generate_location_map() {
     
     local root_marker=""
     [[ -z "$current_rel_path" ]] && root_marker="  📍 YOU ARE HERE"
-    tree_lines+=("misc${root_marker}")
+    tree_lines+=("📁 misc${root_marker}")
     build_tree "$SCRIPT_DIR" ""
     
     local out="## Map:\n\n\`\`\`\n"
