@@ -17,7 +17,7 @@ should_skip() {
     local basename=$(basename "$1")
     local pattern
     for pattern in "${SKIP_PATTERNS[@]}"; do
-        [[ "${basename,,}" == "$pattern" ]] && return 0
+        [[ "$(printf %s "$basename" | tr '[:upper:]' '[:lower:]')" == "$pattern" ]] && return 0
     done
     return 1
 }

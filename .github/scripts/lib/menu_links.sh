@@ -24,7 +24,7 @@ generate_directory_listing() {
         if [[ -d "$item" ]]; then
             has_items=true
             local basename=$(basename "$item")
-            local encoded_path=$(percent_encode "${item#$SCRIPT_DIR/}")
+            local encoded_path=$(percent_encode "${item#$ROOT_DIR/}")
             output+="### 📁 [$basename]($BASE_URL/$encoded_path/)\n\n"
         fi
     done < <(find "$dir" -maxdepth 1 -mindepth 1 -print0 | sort -z)
@@ -34,7 +34,7 @@ generate_directory_listing() {
         if [[ -f "$item" ]]; then
             has_items=true
             local basename=$(basename "$item")
-            local encoded_path=$(percent_encode "${item#$SCRIPT_DIR/}")
+            local encoded_path=$(percent_encode "${item#$ROOT_DIR/}")
             output+="### [$basename]($BASE_URL/$encoded_path)\n\n"
         fi
     done < <(find "$dir" -maxdepth 1 -mindepth 1 -print0 | sort -z)

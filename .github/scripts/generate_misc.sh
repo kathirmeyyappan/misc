@@ -6,6 +6,8 @@
 
 BASE_URL="https://kathirm.com/misc"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Repository root (parent of .github)
+ROOT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
 
 SKIP_PATTERNS=(
     "readme.md"
@@ -38,7 +40,7 @@ generate_menu() {
     cleanup_readme_variants "$dir"
     echo "Processing: $readme_file"
     
-    local rel_path="${dir#$SCRIPT_DIR}"
+    local rel_path="${dir#$ROOT_DIR}"
     rel_path="${rel_path#/}"
     
     local menu=""
@@ -69,10 +71,10 @@ process_directory() {
 main() {
     echo "=== Generating README menus ==="
     echo "Base URL: $BASE_URL"
-    echo "Working directory: $SCRIPT_DIR"
+    echo "Working directory: $ROOT_DIR"
     echo ""
 
-    process_directory "$SCRIPT_DIR"
+    process_directory "$ROOT_DIR"
 
     echo ""
     echo "=== Done! ==="

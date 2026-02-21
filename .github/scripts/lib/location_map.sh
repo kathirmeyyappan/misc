@@ -10,7 +10,7 @@ generate_location_map() {
         while IFS= read -r -d '' item; do
             should_skip "$item" && continue
             items+=("$item")
-        done < <(find "$dir" -maxdepth 1 -mindepth 1 -printf '%y %p\0' | sort -z | cut -z -d' ' -f2-)
+        done < <(find "$dir" -maxdepth 1 -mindepth 1 -print0 | sort -z)
         
         local count=${#items[@]}
         local i=0
@@ -21,7 +21,7 @@ generate_location_map() {
             ((i == count - 1)) && { connector="└──"; next_prefix="${prefix}    "; }
             
             if [[ -d "$item" ]]; then
-                local d_rel="${item#$SCRIPT_DIR/}"
+                local d_rel="${item#$ROOT_DIR/}"
                 local marker=""
                 [[ "$d_rel" == "$current_rel_path" ]] && marker="  📍 YOU ARE HERE"
                 tree_lines+=("${prefix}${connector} 📁 ${name}${marker}")
@@ -36,7 +36,7 @@ generate_location_map() {
     local root_marker=""
     [[ -z "$current_rel_path" ]] && root_marker="  📍 YOU ARE HERE"
     tree_lines+=("📁 misc${root_marker}")
-    build_tree "$SCRIPT_DIR" ""
+    build_tree "$ROOT_DIR" ""
     
     local out="## Map:\n\n\`\`\`\n"
     for line in "${tree_lines[@]}"; do
