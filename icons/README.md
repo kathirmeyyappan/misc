@@ -1,12 +1,12 @@
-# `misc/dark-history`
+# `misc/icons`
 
 ## Contents:
 
 ### [..](https://kathirm.com/misc/)
 
-### 📁 [elementary-school](https://kathirm.com/misc/dark-history/elementary-school/)
+### [elizabeth.ico](https://kathirm.com/misc/icons/elizabeth.ico)
 
-### 📁 [high-school](https://kathirm.com/misc/dark-history/high-school/)
+### [katsura.ico](https://kathirm.com/misc/icons/katsura.ico)
 
 ## Map:
 
@@ -19,12 +19,12 @@
 │   │   └── 2025_ta_feedback_2.png
 │   ├── resume.pdf
 │   └── speech_tech_paper.pdf
-├── 📁 dark-history  📍 YOU ARE HERE
+├── 📁 dark-history
 │   ├── 📁 elementary-school
 │   │   └── food_fight.pdf
 │   └── 📁 high-school
 │       └── a_bald_leap_of_faith.pdf
-├── 📁 icons
+├── 📁 icons  📍 YOU ARE HERE
 │   ├── elizabeth.ico
 │   └── katsura.ico
 ├── korok.mp4

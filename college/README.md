@@ -14,6 +14,7 @@
 
 ```
 📁 misc
+├── CNAME
 ├── 📁 college  📍 YOU ARE HERE
 │   ├── 📁 dbms-ta-reviews
 │   │   ├── 2025_ta_feedback_1.png
@@ -25,15 +26,15 @@
 │   │   └── food_fight.pdf
 │   └── 📁 high-school
 │       └── a_bald_leap_of_faith.pdf
-├── 📁 memes
-│   ├── default_dance.gif
-│   ├── m&m.jpeg
-│   ├── roger.mp4
-│   └── uno_reverse.gif
-├── 📁 random
+├── 📁 icons
 │   ├── elizabeth.ico
 │   └── katsura.ico
-└── korok.mp4
+├── korok.mp4
+└── 📁 memes
+    ├── default_dance.gif
+    ├── m&m.jpeg
+    ├── roger.mp4
+    └── uno_reverse.gif
 ```
 
 
