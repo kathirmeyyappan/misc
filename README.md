@@ -12,15 +12,12 @@
 
 ### 📁 [memes](https://kathirm.com/misc/memes/)
 
-### [CNAME](https://kathirm.com/misc/CNAME)
-
 ### [korok.mp4](https://kathirm.com/misc/korok.mp4)
 
 ## Map:
 
 ```
 📁 misc  📍 YOU ARE HERE
-├── CNAME
 ├── 📁 college
 │   ├── 📁 dbms-ta-reviews
 │   │   ├── 2025_ta_feedback_1.png
