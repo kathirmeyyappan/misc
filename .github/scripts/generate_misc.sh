@@ -17,6 +17,7 @@ SKIP_PATTERNS=(
     ".github"
     "_config.yml"
     "_layouts"
+    "cname"
     "generate_misc.sh"
     "lib"
 )
