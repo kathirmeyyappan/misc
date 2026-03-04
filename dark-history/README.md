@@ -12,7 +12,6 @@
 
 ```
 📁 misc
-├── CNAME
 ├── 📁 college
 │   ├── 📁 dbms-ta-reviews
 │   │   ├── 2025_ta_feedback_1.png
