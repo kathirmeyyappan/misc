@@ -13,7 +13,7 @@
 ```
 📁 misc
 ├── 📁 college
-│   ├── advanced_os_presentation.pdf
+│   ├── advanced_os_paper.pdf
 │   ├── 📁 dbms-ta-reviews
 │   │   ├── 2025_ta_feedback_1.png
 │   │   └── 2025_ta_feedback_2.png

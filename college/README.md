@@ -6,7 +6,7 @@
 
 ### 📁 [dbms-ta-reviews](https://kathirm.com/misc/college/dbms-ta-reviews/)
 
-### [advanced_os_presentation.pdf](https://kathirm.com/misc/college/advanced_os_presentation.pdf)
+### [advanced_os_paper.pdf](https://kathirm.com/misc/college/advanced_os_paper.pdf)
 
 ### [resume.pdf](https://kathirm.com/misc/college/resume.pdf)
 
@@ -17,7 +17,7 @@
 ```
 📁 misc
 ├── 📁 college  📍 YOU ARE HERE
-│   ├── advanced_os_presentation.pdf
+│   ├── advanced_os_paper.pdf
 │   ├── 📁 dbms-ta-reviews
 │   │   ├── 2025_ta_feedback_1.png
 │   │   └── 2025_ta_feedback_2.png
