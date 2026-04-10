@@ -8,6 +8,8 @@
 
 ### [2025_ta_feedback_2.png](https://kathirm.com/misc/college/dbms-ta-reviews/2025_ta_feedback_2.png)
 
+### [2026_ta_feedback.png](https://kathirm.com/misc/college/dbms-ta-reviews/2026_ta_feedback.png)
+
 ## Map:
 
 ```
@@ -16,7 +18,8 @@
 │   ├── advanced_os_paper.pdf
 │   ├── 📁 dbms-ta-reviews  📍 YOU ARE HERE
 │   │   ├── 2025_ta_feedback_1.png
-│   │   └── 2025_ta_feedback_2.png
+│   │   ├── 2025_ta_feedback_2.png
+│   │   └── 2026_ta_feedback.png
 │   ├── resume.pdf
 │   └── speech_tech_paper.pdf
 ├── 📁 dark-history
